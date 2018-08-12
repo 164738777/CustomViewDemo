@@ -5,11 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.bql.customviewdemo.R;
 
-public class Demo1Activity extends AppCompatActivity {
+public class CanvasDrawBaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo1);
+        setContentView(R.layout.activity_canvas_draw_base);
     }
 }

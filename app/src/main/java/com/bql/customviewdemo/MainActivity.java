@@ -1,18 +1,22 @@
 package com.bql.customviewdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
-import com.bql.customviewdemo.aty.Demo1Activity;
+import com.bql.customviewdemo.aty.CanvasDrawBaseActivity;
+import com.bql.customviewdemo.aty.PathActivity;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * https://hencoder.com 自定义view系列
+ */
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView rcv;
@@ -29,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initList() {
-        mEntityList.add(new Entity("Demo1", Demo1Activity.class));
+        mEntityList.add(new Entity("CanvasDrawBaseView", CanvasDrawBaseActivity.class));
+        mEntityList.add(new Entity("PathView", PathActivity.class));
     }
 
     private void initAdapter() {
@@ -37,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mMyAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(MainActivity.this, "sdfsdf", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, ((Entity) adapter.getItem(position)).getTargetClass()));
             }
         });
 
