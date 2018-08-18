@@ -9,4 +9,10 @@
     android:orientation="vertical"
     tools:context=".aty.PieChatViewAndHistogramViewActivity">
 
+    <com.bql.customviewdemo.views.PieChatView
+        android:id="@+id/view_pieChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"/>
+
 </LinearLayout>
