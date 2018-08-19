@@ -73,6 +73,13 @@ public class HistogramView extends View {
         canvas.drawRect(200, 150, 250, 250, mPaint);
         canvas.drawRect(300, 100, 350, 250, mPaint);
         canvas.drawRect(400, 50, 450, 250, mPaint);
+
+        mPaint.setColor(Color.BLACK);
+        mPaint.setTextSize(30);
+        canvas.drawText("1", (float) (100+ (150 - 100) * 1.0 / 2), 280, mPaint);
+        canvas.drawText("2", (float) (200+ (250 - 200) * 1.0 / 2), 280, mPaint);
+        canvas.drawText("3", (float) (300+ (350 - 300) * 1.0 / 2), 280, mPaint);
+        canvas.drawText("4", (float) (400+ (450 - 400) * 1.0 / 2), 280, mPaint);
     }
 
     @Override
