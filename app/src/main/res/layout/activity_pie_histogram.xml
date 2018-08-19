@@ -15,4 +15,10 @@
         android:layout_height="wrap_content"
         android:background="#ffffff"/>
 
+    <com.bql.customviewdemo.views.HistogramView
+        android:id="@+id/view_histogram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"/>
+
 </LinearLayout>

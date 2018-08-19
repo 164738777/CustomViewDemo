@@ -7,6 +7,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +18,7 @@ import java.util.Map;
 /**
  * 作者:  lbqiang on 2018/8/12 15:46
  * 邮箱:  anworkmail_q@126.com
- * 作用:
+ * 作用:  能自定义数据的饼图
  */
 public class PieChatView extends View {
 
@@ -35,9 +38,9 @@ public class PieChatView extends View {
     private static final int[] COLOR_ARRAY = {RED, BLUE, YELLOW, GREEN, CYAN, MAGENTA, BLACK, DKGRAY, GRAY, LTGRAY, WHITE};
 
 
-    private Map<String, Double> mData = new HashMap<>();
-    private List<String> mStringList = new ArrayList<>();
-    private List<Double> mDataList = new ArrayList<>();
+    private Map<String, Double> mData = Maps.newHashMap();
+    private List<String> mStringList = Lists.newArrayList();
+    private List<Double> mDataList = Lists.newArrayList();
 
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private int pieRadius = 100; // 半径
