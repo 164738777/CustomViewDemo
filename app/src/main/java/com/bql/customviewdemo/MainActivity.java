@@ -34,9 +34,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initList() {
+        mEntityList.add(new Entity("Day1"));
         mEntityList.add(new Entity("CanvasDrawBaseView", CanvasDrawBaseActivity.class));
         mEntityList.add(new Entity("PathView", PathActivity.class));
         mEntityList.add(new Entity("饼图与直方图（Day1作业）", PieChatViewAndHistogramViewActivity.class));
+        mEntityList.add(new Entity());
+
+        mEntityList.add(new Entity("Day2"));
+
     }
 
     private void initAdapter() {
@@ -44,7 +49,10 @@ public class MainActivity extends AppCompatActivity {
         mMyAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                startActivity(new Intent(MainActivity.this, ((Entity) adapter.getItem(position)).getTargetClass()));
+                Entity item = (Entity) adapter.getItem(position);
+                if (item.getTargetClass() != null) {
+                    startActivity(new Intent(MainActivity.this, item.getTargetClass()));
+                }
             }
         });
 

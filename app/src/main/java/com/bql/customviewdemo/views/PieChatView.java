@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * 作者:  lbqiang on 2018/8/12 15:46
  * 邮箱:  anworkmail_q@126.com
- * 作用:  能自定义数据的饼图
+ * 作用:  能自定义数据的饼图, 有待添加折线&描述文字
  */
 public class PieChatView extends View {
 

@@ -11,6 +11,14 @@ public class Entity {
     private String name;
     private Class<? extends AppCompatActivity> targetClass;
 
+    public Entity() {
+        this("", null);
+    }
+
+    public Entity(String name) {
+        this(name, null);
+    }
+
     public Entity(String name, Class<? extends AppCompatActivity> targetClass) {
         this.name = name;
         this.targetClass = targetClass;
