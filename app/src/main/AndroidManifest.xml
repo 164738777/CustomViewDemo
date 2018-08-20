@@ -19,6 +19,8 @@
         <activity android:name=".aty.CanvasDrawBaseActivity"/>
         <activity android:name=".aty.PathActivity"/>
         <activity android:name=".aty.PieChatViewAndHistogramViewActivity"/>
+        <activity android:name=".aty.LinearGradientActivity"/>
+        <activity android:name=".aty.RadialGradientActivity"/>
     </application>
 
 </manifest>

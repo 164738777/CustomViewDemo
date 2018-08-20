@@ -8,8 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.bql.customviewdemo.aty.CanvasDrawBaseActivity;
+import com.bql.customviewdemo.aty.LinearGradientActivity;
 import com.bql.customviewdemo.aty.PathActivity;
 import com.bql.customviewdemo.aty.PieChatViewAndHistogramViewActivity;
+import com.bql.customviewdemo.aty.RadialGradientActivity;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
@@ -34,13 +36,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initList() {
-        mEntityList.add(new Entity("Day1"));
+        mEntityList.add(new Entity("Day1 Canvas基础 & Path"));
         mEntityList.add(new Entity("CanvasDrawBaseView", CanvasDrawBaseActivity.class));
         mEntityList.add(new Entity("PathView", PathActivity.class));
         mEntityList.add(new Entity("饼图与直方图（Day1作业）", PieChatViewAndHistogramViewActivity.class));
         mEntityList.add(new Entity());
 
-        mEntityList.add(new Entity("Day2"));
+        mEntityList.add(new Entity("Day2 Paint"));
+        mEntityList.add(new Entity("LinearGradient", LinearGradientActivity.class));
+        mEntityList.add(new Entity("RadialGradient", RadialGradientActivity.class));
 
     }
 
