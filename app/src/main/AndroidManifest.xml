@@ -21,6 +21,8 @@
         <activity android:name=".aty.PieChatViewAndHistogramViewActivity"/>
         <activity android:name=".aty.LinearGradientActivity"/>
         <activity android:name=".aty.RadialGradientActivity"/>
+        <activity android:name=".aty.ShaderActivity"/>
+        <activity android:name=".aty.PaintActivity"/>
     </application>
 
 </manifest>

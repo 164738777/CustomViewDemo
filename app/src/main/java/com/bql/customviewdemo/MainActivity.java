@@ -9,9 +9,11 @@ import android.view.View;
 
 import com.bql.customviewdemo.aty.CanvasDrawBaseActivity;
 import com.bql.customviewdemo.aty.LinearGradientActivity;
+import com.bql.customviewdemo.aty.PaintActivity;
 import com.bql.customviewdemo.aty.PathActivity;
 import com.bql.customviewdemo.aty.PieChatViewAndHistogramViewActivity;
 import com.bql.customviewdemo.aty.RadialGradientActivity;
+import com.bql.customviewdemo.aty.ShaderActivity;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         mEntityList.add(new Entity("Day2 Paint"));
         mEntityList.add(new Entity("LinearGradient", LinearGradientActivity.class));
         mEntityList.add(new Entity("RadialGradient", RadialGradientActivity.class));
+        mEntityList.add(new Entity("BitmapShader", ShaderActivity.class));
+        mEntityList.add(new Entity("paint", PaintActivity.class));
 
     }
 
