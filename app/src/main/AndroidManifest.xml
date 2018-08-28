@@ -22,7 +22,7 @@
         <activity android:name=".aty.LinearGradientActivity"/>
         <activity android:name=".aty.RadialGradientActivity"/>
         <activity android:name=".aty.ShaderActivity"/>
-        <activity android:name=".aty.PaintActivity"/>
+        <activity android:name=".aty.PaintAndPathEffectActivity"/>
     </application>
 
 </manifest>

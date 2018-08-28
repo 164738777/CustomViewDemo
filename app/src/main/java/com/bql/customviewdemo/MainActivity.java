@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.bql.customviewdemo.aty.CanvasDrawBaseActivity;
 import com.bql.customviewdemo.aty.LinearGradientActivity;
-import com.bql.customviewdemo.aty.PaintActivity;
+import com.bql.customviewdemo.aty.PaintAndPathEffectActivity;
 import com.bql.customviewdemo.aty.PathActivity;
 import com.bql.customviewdemo.aty.PieChatViewAndHistogramViewActivity;
 import com.bql.customviewdemo.aty.RadialGradientActivity;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         mEntityList.add(new Entity("LinearGradient", LinearGradientActivity.class));
         mEntityList.add(new Entity("RadialGradient", RadialGradientActivity.class));
         mEntityList.add(new Entity("BitmapShader", ShaderActivity.class));
-        mEntityList.add(new Entity("paint", PaintActivity.class));
+        mEntityList.add(new Entity("Paint PathEffect", PaintAndPathEffectActivity.class));
 
     }
 

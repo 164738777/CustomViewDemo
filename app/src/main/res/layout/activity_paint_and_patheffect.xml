@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".aty.PaintActivity">
+    tools:context=".aty.PaintAndPathEffectActivity">
 
-    <com.bql.customviewdemo.views.PaintView
+    <com.bql.customviewdemo.views.PaintAndPathEffectView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
