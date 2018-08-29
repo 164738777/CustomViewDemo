@@ -2,12 +2,16 @@ package com.bql.customviewdemo.views;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ComposePathEffect;
 import android.graphics.CornerPathEffect;
 import android.graphics.DashPathEffect;
 import android.graphics.DiscretePathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathDashPathEffect;
 import android.graphics.PathEffect;
+import android.graphics.SumPathEffect;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -26,7 +30,9 @@ public class PaintAndPathEffectView extends View {
     private PathEffect mDashPathEffect = new DashPathEffect(new float[]{10, 5}, 10);
     private PathEffect mCornerPathEffect = new CornerPathEffect(20);
     private PathEffect mDiscretePathEffect = new DiscretePathEffect(20, 5);
-//    private PathEffect mPathDashPathEffect = new PathDashPathEffect();
+    private PathEffect mPathDashPathEffect;
+    private PathEffect mSumPathEffect = new SumPathEffect(mCornerPathEffect, mDiscretePathEffect);
+    private PathEffect mComposePathEffect = new ComposePathEffect(mCornerPathEffect, mDiscretePathEffect);
 
     public PaintAndPathEffectView(Context context) {
         this(context, null);
@@ -86,7 +92,38 @@ public class PaintAndPathEffectView extends View {
         mPaint.setPathEffect(mDashPathEffect);
         canvas.drawPath(mPath, mPaint);
 
+        // 用Path来画虚线
+        mPath = new Path();
+        Path path = new Path();
+        path.addCircle(0, 0, 10, Path.Direction.CW);
+        mPathDashPathEffect = new PathDashPathEffect(path, 40, 0, PathDashPathEffect.Style.TRANSLATE);
+        drawLines(startX, startY + 600);
+        mPaint.setPathEffect(mPathDashPathEffect);
+        canvas.drawPath(mPath, mPaint);
 
+        // 画2条
+        mPath = new Path();
+        drawLines(startX, startY + 750);
+        mPaint.setPathEffect(mSumPathEffect);
+        canvas.drawPath(mPath, mPaint);
+
+        // 混合效果
+        mPath = new Path();
+        drawLines(startX, startY + 900);
+        mPaint.setPathEffect(mComposePathEffect);
+        canvas.drawPath(mPath, mPaint);
+
+
+        // 添加阴影，绘制在底层
+        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setTextSize(40);
+        mPaint.setShadowLayer(10, 5, 5, Color.RED);
+        canvas.drawText("Hello World", 50, 1100, mPaint);
+
+        // BlurMaskFilter 模糊效果，绘制在上层
+        // EmbossMaskFilter 浮雕效果
+        //        mPaint.setMaskFilter()
     }
 
     private void drawLines(float startX, float startY) {
