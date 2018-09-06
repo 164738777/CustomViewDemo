@@ -14,6 +14,7 @@ import com.bql.customviewdemo.aty.PathActivity;
 import com.bql.customviewdemo.aty.PieChatViewAndHistogramViewActivity;
 import com.bql.customviewdemo.aty.RadialGradientActivity;
 import com.bql.customviewdemo.aty.ShaderActivity;
+import com.bql.customviewdemo.aty.TextActivity;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
@@ -49,7 +50,10 @@ public class MainActivity extends AppCompatActivity {
         mEntityList.add(new Entity("RadialGradient", RadialGradientActivity.class));
         mEntityList.add(new Entity("BitmapShader", ShaderActivity.class));
         mEntityList.add(new Entity("Paint PathEffect", PaintAndPathEffectActivity.class));
+        mEntityList.add(new Entity());
 
+        mEntityList.add(new Entity("Day3 Paint Text"));
+        mEntityList.add(new Entity("TextAty", TextActivity.class));
     }
 
     private void initAdapter() {
