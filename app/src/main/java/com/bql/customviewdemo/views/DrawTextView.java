@@ -6,6 +6,7 @@ import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathEffect;
+import android.graphics.Rect;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
@@ -112,6 +113,23 @@ public class DrawTextView extends View {
         Log.d("MyLog", "onDraw:leading " + fontMetrics.leading);
 
 
+        // getTextBounds 获取文字显示范围
+        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mPaint.setTextSize(40);
+        canvas.drawText(text, 0, 1300, mPaint);
+        Rect bound = new Rect();
+        mPaint.getTextBounds(text, 0, text.length(), bound);
+        bound.top += 1300;
+        bound.bottom += 1300;
+        mPaint.setStyle(Paint.Style.STROKE);
+        canvas.drawRect(bound, mPaint);
+
+
+        // 测量文字占用宽度（宽于getTextBounds）
+        mPaint.setStyle(Paint.Style.FILL);
+        canvas.drawText(text, 0, 1350, mPaint);
+        float textWidth = mPaint.measureText(text);
+        canvas.drawLine(0, 1350, textWidth, 1350, mPaint);
     }
 
     private void drawLines(float startX, float startY) {
