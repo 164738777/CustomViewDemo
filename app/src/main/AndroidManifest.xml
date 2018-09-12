@@ -24,6 +24,7 @@
         <activity android:name=".aty.ShaderActivity"/>
         <activity android:name=".aty.PaintAndPathEffectActivity"/>
         <activity android:name=".aty.TextActivity"/>
+        <activity android:name=".aty.BitmapActivity"/>
     </application>
 
 </manifest>

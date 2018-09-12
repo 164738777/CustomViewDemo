@@ -98,7 +98,6 @@ public class DrawTextView extends View {
         canvas.drawText(text, 0, 1250, mPaint);
 
 
-
         // 获取推荐的行距(手动绘制的两行baseline的距离，并不是StaticLayout的多行文字)
         Log.d("MyLog", "onDraw:getFontSpacing " + mPaint.getFontSpacing());
 
@@ -130,6 +129,18 @@ public class DrawTextView extends View {
         canvas.drawText(text, 0, 1350, mPaint);
         float textWidth = mPaint.measureText(text);
         canvas.drawLine(0, 1350, textWidth, 1350, mPaint);
+
+
+        // 获取给定的长度以内所测量的文字宽度 breakText 返回值是截取的个数
+        float[] measuredWidth = {0};
+        int measuredCount = mPaint.breakText(text, 0, text.length(), true, 100, measuredWidth);
+        canvas.drawText(text, 0, measuredCount, 0, 1400, mPaint);
+
+        measuredCount = mPaint.breakText(text, 0, text.length(), true, 150, measuredWidth);
+        canvas.drawText(text, 0, measuredCount, 0, 1450, mPaint);
+
+        measuredCount = mPaint.breakText(text, 0, text.length(), true, 300, measuredWidth);
+        canvas.drawText(text, 0, measuredCount, 0, 1500, mPaint);
     }
 
     private void drawLines(float startX, float startY) {

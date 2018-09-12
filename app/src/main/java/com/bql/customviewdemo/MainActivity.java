@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.bql.customviewdemo.aty.BitmapActivity;
 import com.bql.customviewdemo.aty.CanvasDrawBaseActivity;
 import com.bql.customviewdemo.aty.LinearGradientActivity;
 import com.bql.customviewdemo.aty.PaintAndPathEffectActivity;
@@ -54,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
         mEntityList.add(new Entity("Day3 Paint Text"));
         mEntityList.add(new Entity("TextAty", TextActivity.class));
+        mEntityList.add(new Entity());
+
+        mEntityList.add(new Entity("Day4"));
+        mEntityList.add(new Entity("BitmapAty", BitmapActivity.class));
     }
 
     private void initAdapter() {
