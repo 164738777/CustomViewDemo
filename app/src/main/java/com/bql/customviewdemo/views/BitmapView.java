@@ -52,6 +52,13 @@ public class BitmapView extends View {
 
 
 
-        
+        // canvas 二维变换
+        canvas.save();
+        //        canvas.translate(200, 0); // 平移
+        //        canvas.rotate(45, bitmap.getWidth() / 2, bitmap.getHeight() / 2 + 150); // 旋转
+        //        canvas.scale(1.3f, 1.3f); // 缩放
+        //        canvas.skew(0, 0.5f); // 歪斜
+        canvas.drawBitmap(bitmap, 0, 150, mPaint);
+        canvas.restore();
     }
 }
