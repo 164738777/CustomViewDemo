@@ -3,6 +3,7 @@ package com.bql.customviewdemo.views;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Camera;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -19,6 +20,7 @@ import com.bql.customviewdemo.R;
 public class BitmapView extends View {
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+    private Camera mCamera = new Camera();
 
     public BitmapView(Context context) {
         this(context, null);
@@ -51,13 +53,23 @@ public class BitmapView extends View {
         canvas.restore();
 
 
-
         // canvas 二维变换
-        canvas.save();
+        //        canvas.save();
         //        canvas.translate(200, 0); // 平移
         //        canvas.rotate(45, bitmap.getWidth() / 2, bitmap.getHeight() / 2 + 150); // 旋转
         //        canvas.scale(1.3f, 1.3f); // 缩放
         //        canvas.skew(0, 0.5f); // 歪斜
+        //        canvas.drawBitmap(bitmap, 0, 150, mPaint);
+        //        canvas.restore();
+
+
+
+        // Camera 三维转换
+        canvas.save();
+        mCamera.save();
+        mCamera.rotateX(30); // 旋转 Camera 的三维空间
+        mCamera.applyToCanvas(canvas); // 把旋转投影到 Canvas
+        mCamera.restore();
         canvas.drawBitmap(bitmap, 0, 150, mPaint);
         canvas.restore();
     }
