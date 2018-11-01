@@ -13,7 +13,7 @@ public interface Interface1 {
     //    public void method();
 
     default void defaultMethod() {
-        System.out.println("预先实现的默认方法, 可以选择性实现");
+        System.out.println("Interface1预先实现的默认方法, 可以选择性实现");
     }
 
     static void staticMethod() {

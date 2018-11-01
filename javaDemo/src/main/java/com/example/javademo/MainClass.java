@@ -1,9 +1,10 @@
 package com.example.javademo;
 
 /**
- * 作用:
+ * 说明:
  * 1. 接口之间继承，静态方法不会继承，无法重写(修饰符已经默认public)
- * 2. 类之间继承，方法继承要看修饰符，静态方法无法重写
+ * 2. 接口之间继承，默认方法会继承并可以重写.
+ * 3. 类之间继承，方法继承要看修饰符，静态方法无法重写
  */
 public class MainClass {
     public static void main(String... args) {
