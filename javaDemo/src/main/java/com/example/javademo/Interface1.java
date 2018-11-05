@@ -3,7 +3,7 @@ package com.example.javademo;
 /**
  * 作者:  lbqiang on 2018/10/28 22:50
  * 邮箱:  anworkmail_q@126.com
- * 作用:
+ * 作用:  JDK8+ 才支持 静态方法 和 默认实现方法
  */
 public interface Interface1 {
     int CONTANT = 1;

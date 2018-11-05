@@ -14,7 +14,13 @@ public class MainClass {
         Interface2.staticMethod();
 
         new Class1().defaultMethod();
-        new Class1().staticMethod1();
-        new Class2().staticMethod1();
+        Class1.staticMethod1();
+        Class2.staticMethod1();
+
+
+        InnerClass.Haha haha = new InnerClass().new Haha();
+        haha.print();
+        haha.print2();
+        haha.print3("~~~~~~~~");
     }
 }
